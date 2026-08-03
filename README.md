@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/hero.png" alt="England Bus Tracker Card" width="640">
+  <img src="https://raw.githubusercontent.com/davidh62/england-bus-tracker-card/main/assets/hero.png" alt="England Bus Tracker Card" width="640">
 </p>
 
 <h1 align="center">England Bus Tracker Card</h1>
@@ -92,14 +92,14 @@ right, a town centre at map zoom 12, pulled back far enough to show two
 operators' 471/472 services and their purple route lines:
 
 <p align="center">
-  <img src="assets/screenshot-dashboard.png" alt="Two monitors: board, map and route ladder" width="860">
+  <img src="https://raw.githubusercontent.com/davidh62/england-bus-tracker-card/main/assets/screenshot-dashboard.png" alt="Two monitors: board, map and route ladder" width="860">
 </p>
 
 The route ladder up close — the next bus crawling toward your stop, with the
 stops it will call at, elided sections dashed, and the following departure:
 
 <p align="center">
-  <img src="assets/screenshot-ladder.png" alt="Route ladder: the platform-sign approach view" width="520">
+  <img src="https://raw.githubusercontent.com/davidh62/england-bus-tracker-card/main/assets/screenshot-ladder.png" alt="Route ladder: the platform-sign approach view" width="520">
 </p>
 
 ## Licence
