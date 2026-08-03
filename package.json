@@ -1,0 +1,17 @@
+{
+  "name": "england-bus-tracker-card",
+  "version": "0.2.0",
+  "description": "Companion Lovelace card for the England Bus Tracker integration — board, map and ladder views with a visual editor",
+  "license": "MIT",
+  "type": "module",
+  "scripts": { "build": "rollup -c" },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.18.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": { "lit": "^3.1.4" }
+}
