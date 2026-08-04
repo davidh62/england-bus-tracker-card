@@ -71,9 +71,12 @@ That's it — no YAML required. (A code editor is available if you want it.)
 - **Card** — title (or hide it), which stops and routes to show.
 - **Board** — colourway (classic dot-matrix / light / follow-theme) and
   optional text, headline and background colour overrides.
-- **Map** — height, zoom, tile theme, badge size, route-line on/off and a
-  route-line colour override. A tight zoom (~14) frames a single stop; pulling
-  back (~12) shows a whole town and every route serving it.
+- **Map** — height, zoom (up to 20), tile theme, **badge size** and a separate
+  **stop-marker size**, route-line on/off and a route-line colour override.
+  Tracked buses always render *above* the stop markers. A tight zoom (~14)
+  frames a single stop; pulling back (~12) shows a whole town and its routes;
+  a very tight zoom (~18–19) with the stop markers shrunk turns a busy
+  interchange into a live "ground radar" where the buses dominate.
 - **Ladder** — which bus to follow (auto, or pin a route/direction) and the
   caption line. Your chosen direction is remembered per browser.
 
