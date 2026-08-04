@@ -1,7 +1,7 @@
 import { EnglandBusTrackerCard } from "./card";
 import { EnglandBusTrackerCardEditor } from "./editor";
 
-const VERSION = "0.4.5";
+const VERSION = "0.4.7";
 
 customElements.define("england-bus-tracker-card", EnglandBusTrackerCard);
 customElements.define(
@@ -16,7 +16,7 @@ customElements.define(
   description:
     "Live bus departure board and map for the England Bus Tracker integration — zero-YAML visual editor.",
   preview: true,
-  documentation_url: "https://github.com/placeholder/england-bus-tracker-card",
+  documentation_url: "https://github.com/davidh62/england-bus-tracker-card",
 });
 
 console.info(

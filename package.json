@@ -1,6 +1,6 @@
 {
   "name": "england-bus-tracker-card",
-  "version": "0.2.0",
+  "version": "0.4.7",
   "description": "Companion Lovelace card for the England Bus Tracker integration — board, map and ladder views with a visual editor",
   "license": "MIT",
   "type": "module",

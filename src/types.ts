@@ -14,6 +14,7 @@ export interface MapOptions {
   height?: number; // map-card card_size units (1 ≈ 50px), 4-12
   theme_mode?: "auto" | "light" | "dark";
   marker_size?: number;
+  stop_size?: number; // stand-marker icon size (px); default 30
   show_route_line?: boolean; // draw cached road-following route shapes
   line_colour?: string; // override the route line colour (blank = auto)
 }

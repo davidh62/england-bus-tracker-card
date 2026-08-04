@@ -455,7 +455,7 @@ export class EnglandBusTrackerCardEditor extends LitElement {
                   )}
                   ${this._sel(
                     "Zoom",
-                    { number: { min: 8, max: 18, mode: "slider" } },
+                    { number: { min: 8, max: 20, mode: "slider" } },
                     map.zoom ?? 14,
                     (v) => this._updateSub("map", "zoom", v ?? 14)
                   )}
@@ -470,6 +470,12 @@ export class EnglandBusTrackerCardEditor extends LitElement {
                     { number: { min: 32, max: 96, step: 4, mode: "slider" } },
                     map.marker_size ?? 64,
                     (v) => this._updateSub("map", "marker_size", v ?? 64)
+                  )}
+                  ${this._sel(
+                    "Stop marker size (px)",
+                    { number: { min: 8, max: 48, step: 2, mode: "slider" } },
+                    map.stop_size ?? 30,
+                    (v) => this._updateSub("map", "stop_size", v ?? 30)
                   )}
                 </div>
               </ha-expansion-panel>`

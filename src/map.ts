@@ -48,6 +48,10 @@ export function buildMapConfig(
     zoom: opts.zoom ?? 14,
     theme_mode: opts.theme_mode ?? "light",
     focus_follow: "none",
+    // Leaflet TileLayers default to maxZoom 18; OSM tiles go to ~20, so
+    // lift the cap to allow tight "ground radar" framing (19 is crisp,
+    // 20 is upscaled/over-zoom).
+    tile_layer_options: { maxZoom: 20 },
   };
   if (x !== undefined && y !== undefined) {
     card.x = x;
@@ -89,7 +93,11 @@ export function buildMapConfig(
             display: "icon",
             icon: "mdi:bus-stop",
             color: "#d32f2f",
-            size: 30,
+            size: opts.stop_size ?? 30,
+            // Keep stop pins BELOW the vehicles so a bus is never hidden
+            // by a stop. Leaflet otherwise stacks markers by latitude,
+            // which makes the layering flip depending on positions.
+            z_index_offset: 100,
           },
         })),
         {
@@ -102,6 +110,8 @@ export function buildMapConfig(
             size: opts.marker_size ?? 64,
             color: "transparent",
             css: "--card-background-color: transparent; --ha-marker-border-radius: 0;",
+            // Always above the stop pins, wherever the bus is.
+            z_index_offset: 1000,
           },
         },
       ],
