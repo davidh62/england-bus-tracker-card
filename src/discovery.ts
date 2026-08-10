@@ -21,8 +21,17 @@ export function discover(hass: any, deviceId?: string): Discovered {
     routes: [],
     routeLabels: {},
     routeShapes: {},
+    deviceName: "",
   };
   if (!hass) return out;
+
+  // This monitor's device display name — used to scope the map's vehicle
+  // filter to THIS monitor only (auto-entities `device:` matches by name),
+  // so a route tracked by several monitors isn't drawn multiple times.
+  if (deviceId) {
+    const dev = hass.devices?.[deviceId];
+    out.deviceName = dev ? dev.name_by_user || dev.name || "" : "";
+  }
 
   const entityIds = Object.keys(hass.states).filter((eid) => {
     if (!deviceId) return true;

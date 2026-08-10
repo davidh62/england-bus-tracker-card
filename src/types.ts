@@ -115,4 +115,6 @@ export interface Discovered {
   routeLabels: Record<string, string[]>;
   /** route -> its line geometry source (only routes with a real shape) */
   routeShapes: Record<string, RouteShape>;
+  /** this monitor's HA device name (name_by_user||name), for map scoping */
+  deviceName: string;
 }

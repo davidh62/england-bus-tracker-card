@@ -1,7 +1,7 @@
 import { EnglandBusTrackerCard } from "./card";
 import { EnglandBusTrackerCardEditor } from "./editor";
 
-const VERSION = "0.4.8";
+const VERSION = "0.4.9";
 
 customElements.define("england-bus-tracker-card", EnglandBusTrackerCard);
 customElements.define(

@@ -42,6 +42,18 @@ export function buildMapConfig(
             .map((r) => r.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
             .join("|")})$/`;
 
+  // Scope the vehicle marker to THIS monitor's own device. A route tracked
+  // by several monitors (e.g. 487 watched by two village monitors AND the
+  // Birkenhead monitor) would otherwise be drawn once per monitor — the
+  // copies overlap when still and "echo"/flicker when moving (and can differ
+  // in colour if a monitor's badge colour is unset). The vehicle trackers
+  // belong to their monitor's HA device, so auto-entities `device:` (matched
+  // by name, regex-anchored so distinct monitors can't cross-match) pins each
+  // map to its own buses. Stays a live filter, so no map rebuild as buses move.
+  const deviceFilter = d.deviceName
+    ? { device: `/^${d.deviceName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$/` }
+    : {};
+
   const card: any = {
     type: "custom:map-card",
     card_size: Math.min(12, Math.max(4, opts.height ?? 8)),
@@ -103,6 +115,7 @@ export function buildMapConfig(
         {
           integration: "uk_bus_tracker",
           domain: "device_tracker",
+          ...deviceFilter,
           attributes: { route_badge: "*", route: routeFilter },
           options: {
             display: "marker",
