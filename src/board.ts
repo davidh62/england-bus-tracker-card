@@ -81,11 +81,6 @@ export function renderBoard(
     (a) => a.on && (routes.length === 0 || routes.includes(a.route))
   );
 
-  // Stand suffix only when a route appears at more than one stop here
-  const stopsPerRoute: Record<string, number> = {};
-  for (const s of sensors)
-    stopsPerRoute[s.route] = (stopsPerRoute[s.route] || 0) + 1;
-
   return html`
     <div
       class="board ${preset}"
@@ -104,9 +99,7 @@ export function renderBoard(
         (s) => html`
           <div class="headline" style="color:${accent}">
             Next ${s.route}${s.towards ? ` to ${s.towards}` : ""} —
-            ${fmtTime(s.when)}${stopsPerRoute[s.route] > 1
-              ? ` (Stand ${s.atco.slice(-1)})`
-              : ""}
+            ${fmtTime(s.when)}
           </div>
           <div>
             ${s.live ? html`<span class="dot">●</span>` : nothing}${detail(s)}

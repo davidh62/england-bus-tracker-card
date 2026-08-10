@@ -24,7 +24,7 @@ function t(t,e,i,s){var o,n=arguments.length,r=n<3?e:null===s?s=Object.getOwnPro
     display: inline-block;
     margin-right: 4px;
   }
-`;const mt={classic:{bg:"#000000",text:"#ffff00",accent:"#33ff33",font:"dot-matrix"},light:{bg:"#f5f5f5",text:"#222222",accent:"#1565c0",font:"dot-matrix"},theme:{bg:"var(--card-background-color)",text:"var(--primary-text-color)",accent:"var(--primary-color)",font:"clean"}};function $t(t,e,i,s){const o=mt[s.colourway??"classic"]??mt.classic,n=s.font_preset??o.font,r=s.bg??o.bg,a=s.text_color??o.text,l=s.accent_color??o.accent,c=t.nextBus.filter(t=>(0===e.length||e.includes(t.route))&&(0===i.length||i.includes(t.atco))),d=t.anomalies.filter(t=>t.on&&(0===e.length||e.includes(t.route))),h={};for(const t of c)h[t.route]=(h[t.route]||0)+1;return K`
+`;const mt={classic:{bg:"#000000",text:"#ffff00",accent:"#33ff33",font:"dot-matrix"},light:{bg:"#f5f5f5",text:"#222222",accent:"#1565c0",font:"dot-matrix"},theme:{bg:"var(--card-background-color)",text:"var(--primary-text-color)",accent:"var(--primary-color)",font:"clean"}};function $t(t,e,i,s){const o=mt[s.colourway??"classic"]??mt.classic,n=s.font_preset??o.font,r=s.bg??o.bg,a=s.text_color??o.text,l=s.accent_color??o.accent,c=t.nextBus.filter(t=>(0===e.length||e.includes(t.route))&&(0===i.length||i.includes(t.atco))),d=t.anomalies.filter(t=>t.on&&(0===e.length||e.includes(t.route)));return K`
     <div
       class="board ${n}"
       style="background:${r};color:${a}"
@@ -36,7 +36,7 @@ function t(t,e,i,s){var o,n=arguments.length,r=n<3?e:null===s?s=Object.getOwnPro
       ${c.map(t=>K`
           <div class="headline" style="color:${l}">
             Next ${t.route}${t.towards?` to ${t.towards}`:""} —
-            ${function(t){return!t||isNaN(t.getTime())?"--:--":t.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"})}(t.when)}${h[t.route]>1?` (Stand ${t.atco.slice(-1)})`:""}
+            ${function(t){return!t||isNaN(t.getTime())?"--:--":t.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"})}(t.when)}
           </div>
           <div>
             ${t.live?K`<span class="dot">●</span>`:F}${function(t){const e=t.delayMinutes>0?`${t.delayMinutes} min late`:"on time",i=null!==t.minutesUntil&&t.minutesUntil<=0?"Due":null!==t.minutesUntil?`arriving in ${t.minutesUntil} min`:"";return i?`${e} · ${i}`:e}(t)}
@@ -384,4 +384,4 @@ function t(t,e,i,s){var o,n=arguments.length,r=n<3?e:null===s?s=Object.getOwnPro
       border-bottom: 2px solid var(--primary-color);
       padding-bottom: 9px;
     }
-  `,t([ut({attribute:!1})],Mt.prototype,"hass",void 0),t([gt()],Mt.prototype,"_config",void 0),t([gt()],Mt.prototype,"_helpersLoaded",void 0);customElements.define("england-bus-tracker-card",At),customElements.define("england-bus-tracker-card-editor",Mt),window.customCards=window.customCards||[],window.customCards.push({type:"england-bus-tracker-card",name:"England Bus Tracker Card",description:"Live bus departure board and map for the England Bus Tracker integration — zero-YAML visual editor.",preview:!0,documentation_url:"https://github.com/davidh62/england-bus-tracker-card"}),console.info("%c ENGLAND BUS TRACKER CARD %c v0.4.7 ","background:#1565c0;color:#fff;font-weight:700;border-radius:4px 0 0 4px;padding:2px 6px","background:#ffff00;color:#000;font-weight:700;border-radius:0 4px 4px 0;padding:2px 6px");
+  `,t([ut({attribute:!1})],Mt.prototype,"hass",void 0),t([gt()],Mt.prototype,"_config",void 0),t([gt()],Mt.prototype,"_helpersLoaded",void 0);customElements.define("england-bus-tracker-card",At),customElements.define("england-bus-tracker-card-editor",Mt),window.customCards=window.customCards||[],window.customCards.push({type:"england-bus-tracker-card",name:"England Bus Tracker Card",description:"Live bus departure board and map for the England Bus Tracker integration — zero-YAML visual editor.",preview:!0,documentation_url:"https://github.com/davidh62/england-bus-tracker-card"}),console.info("%c ENGLAND BUS TRACKER CARD %c v0.4.8 ","background:#1565c0;color:#fff;font-weight:700;border-radius:4px 0 0 4px;padding:2px 6px","background:#ffff00;color:#000;font-weight:700;border-radius:0 4px 4px 0;padding:2px 6px");
